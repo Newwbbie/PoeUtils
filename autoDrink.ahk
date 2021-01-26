@@ -26,7 +26,7 @@ Gui Add, CheckBox, Checked vc2 x25 y50 w30 h20 +0x20, 2
 Gui Add, CheckBox, Checked vc3 x25 y80 w30 h20 +0x20, 3
 Gui Add, CheckBox, Checked vc4 x25 y110 w30 h20 +0x20, 4
 Gui Add, CheckBox, Checked vc5 x25 y140 w30 h20 +0x20, 5
-Gui Add, CheckBox, Checked vc6 x25 y170 w30 h20 +0x20, T
+Gui Add, CheckBox, vc6 x25 y170 w30 h20 +0x20, T
 
 Gui Add, Edit, Number ve1 x70 y20 w35 h20, 7000
 Gui Add, Edit, Number ve2 x70 y50 w35 h20, 4000
