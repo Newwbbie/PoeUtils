@@ -159,7 +159,7 @@ return
 Return
 
 ; 烟雾地雷
-~*w::
+~w::
 sleep 200
 send {d}
 Return
