@@ -3,14 +3,14 @@ SendMode Input
 SetWorkingDir, %A_ScriptDir%
 
 
-; 只需要改两个就行
 port = 9088
-hour = 7
 
 
 ; 等到某个时间点执行
 ; 一小时 60分，3600秒
-Sleep, 1000 * 3600 * hour
+time := (23-A_Hour)*3600000 + (59-A_Min)*60000 + (60-A_Sec)*1000
+; MsgBox %time%
+Sleep, time
 
 log = 启动时间：%A_MM%-%A_DD% %A_Hour%:%A_Min%:%A_Sec% `n
 ; 复制文件到文件夹
