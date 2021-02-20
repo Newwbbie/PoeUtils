@@ -15,22 +15,22 @@ dir_bak = D:\应用程序备份\%A_YYYY%%A_MM%%A_DD%\%port%
 log = 启动时间：%A_MM%-%A_DD% %A_Hour%:%A_Min%:%A_Sec% `n
 
 ; 如果war包存在
-if FileExist(%pakage%) {
+if FileExist(pakage) {
     ; 创建备份文件夹
     try {
         Sleep, 1000
         FileCreateDir, %dir_bak%
         log = %log%新建文件夹 %dir_bak% `n
-    } catrh e {
+    } catch e {
         log = %log%新建文件夹 %dir_bak% 失败 `n
     }
     ; 备份war包
-    log = %log%开始备份 %pakage% ... `n
+    log = %log%开始备份war包 ... `n
     try {
         Sleep, 1000
         FileMove, %pakage%, %dir_bak%
         log = %log%备份到%dir_bak% `n
-    } Catch e {
+    } catch e {
         try {
             Sleep, 1000
             FileMove, %pakage%, %dir%\webapps\glcs.war.bak%A_YYYY%%A_MM%%A_DD%
@@ -46,7 +46,7 @@ if FileExist(%pakage%) {
 try {
     Sleep, 1000
     FileCopy, %dir%\glcs.war, %dir%\webapps
-    log = %log%复制 %dir%\glcs.war 到 %dir%\webapps `n
+    log = %log%复制war包到webapps文件夹 `n
 } catch e {
     log = %log%更新失败 `n
 }
